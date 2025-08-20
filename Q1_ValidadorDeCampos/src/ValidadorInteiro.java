@@ -1,9 +1,9 @@
 public class ValidadorInteiro implements Valida {
-    public String valor;
+    /*public String valor;
 
     public String getValor() {
         return valor;
-    }
+    }*/
 
     @Override
     public boolean valida(String valor) {
