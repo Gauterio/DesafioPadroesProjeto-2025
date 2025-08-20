@@ -1,4 +1,4 @@
-public class Validador{
+public class Validadorr{
     public enum Tipo { EMAIL, INTEIRO, MATRICULA }
 
     public boolean valida(Tipo tipo,String valor){
