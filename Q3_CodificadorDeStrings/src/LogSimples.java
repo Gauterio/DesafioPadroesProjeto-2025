@@ -5,17 +5,17 @@ public class LogSimples extends CodDecorator{
 
     @Override
     public String codifica(String str){
-        System.out.println("Codificando: " + str);
+        System.out.println("[LOG] Codificando: " + str);
         String resultado = super.codifica(str);
-        System.out.println("Codificado: " + resultado);
+        System.out.println("[LOG] Codificado: " + resultado);
         return resultado;
     }
 
     @Override
     public String decodifica(String str){
-        System.out.println("Decodificando: " + str);
+        System.out.println("[LOG] Decodificando: " + str);
         String resultado = super.decodifica(str);
-        System.out.println("Decodificado: " + resultado);
+        System.out.println("[LOG] Decodificado: " + resultado);
         return resultado;
     }    
 }
