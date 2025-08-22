@@ -1,5 +1,5 @@
 public class LogDetalhado extends CodDecorator{
-    public LogDetalhado(CodDecorator cod){
+    public LogDetalhado(Codificador cod){
         super(cod);
     }
     
