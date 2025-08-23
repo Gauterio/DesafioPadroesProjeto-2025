@@ -1,4 +1,4 @@
-public class Produto {
+public class Produto implements ComponenteVendas {
     private int id;
     private String nome;
     private double preco;
@@ -21,4 +21,13 @@ public class Produto {
         return preco;
     }
 
+    @Override
+    public double calcularTotal(int quantidade) {
+        return preco * quantidade;
+    }
+
+    @Override
+    public String toString(int quantidade) {
+        return String.format("%d %s %d x %.2f = %.2f%n", id, nome, quantidade, preco, calcularTotal(quantidade));
+    }   
 }
