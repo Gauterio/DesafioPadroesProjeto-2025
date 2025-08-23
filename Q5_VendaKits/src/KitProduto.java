@@ -50,9 +50,9 @@ public class KitProduto implements ComponenteVendas {
     public String toString(int quantidade) {
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%d %s %d x %.2f = %.2f%n", id, nome, quantidade, getPreco(), calcularTotal(quantidade)));
-        for (ComponenteVendas comp : componentes) {
-            sb.append("  - ").append(comp.getNome())
-            .append(": ").append(String.format("%.2f%n", comp.getPreco()))
+        for (ComponenteVendas componente : componentes) {
+            sb.append("  - ").append(componente.getNome())
+            .append(": ").append(String.format("%.2f%n", componente.getPreco()))
             .append("\n");
         }
         sb.append(String.format("Desconto do kit: %.1f%%%n", desconto));
