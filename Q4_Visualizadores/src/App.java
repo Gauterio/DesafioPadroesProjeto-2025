@@ -37,6 +37,7 @@ public class App {
             }
         }
         System.out.println("Fim");
+        s.close();
     }
 
     private static boolean comandos(int valor, FonteDeDados dados, VisualizadorDeMedia cm, VisualizadorDeSomatorio cs) {
