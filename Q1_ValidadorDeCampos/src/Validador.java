@@ -1,36 +1,23 @@
-public class Validador{
+public class Validador {
     public enum Tipo { EMAIL, INTEIRO, MATRICULA }
-
-    public boolean valida(Tipo tipo,String valor){
-        switch(tipo){
-            case INTEIRO:
-                for(int i=0;i<valor.length();i++){
-                    if (!Character.isDigit(valor.charAt(i))){
-                        return false;
-                    }
-                }
-                return true;
-            case MATRICULA:
-                if (!valida(Tipo.INTEIRO,valor)){
-                    return false;
-                }else{
-                    int sum = 0;
-                    for(int i=0;i<valor.length()-1;i++){
-                        sum += Character.getNumericValue(valor.charAt(i));
-                    }
-                    int verificador = sum%10;
-                    if (verificador == Character.getNumericValue(valor.charAt(valor.length()-1))){
-                        return true;
-                    }
-                }
-                return false;
+    
+    private Valida strategy;
+    
+    public void setStrategy(Tipo tipo) {
+        switch(tipo) {
             case EMAIL:
-                int posA = valor.indexOf('@');
-                int posPt = valor.indexOf('.');
-                if (posA <= 0 || posPt <= 0) return false;
-                return true;
-            default:
-                return false;
+                strategy = new ValidadorEmail();
+                break;
+            case INTEIRO:
+                strategy = new ValidadorInteiro();
+                break;
+            case MATRICULA:
+                strategy = new ValidadorMatricula();
+                break;
         }
+    }
+    public boolean valida(Tipo tipo, String valor) {
+        setStrategy(tipo);
+        return strategy.valida(valor);
     }
 }
