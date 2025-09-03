@@ -6,5 +6,5 @@ public class ValidadorEmail implements Valida{
         int posPt = valor.indexOf('.');
         if (posA <= 0 || posPt <= 0) return false;
         return true;
-        }
     }
+}
